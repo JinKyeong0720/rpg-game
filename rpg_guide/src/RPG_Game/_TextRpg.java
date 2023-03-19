@@ -1,4 +1,4 @@
-package day04_rpg;
+package RPG_Game;
 
 import java.io.IOException;
 import java.util.Random;
@@ -13,9 +13,10 @@ class MainGame {
 		Shop shop = new Shop();
 		FileData fileData = new FileData();
 		while (true) {
-			System.out.println("=============== [메인메뉴] ================");
+			System.out.println("=========== [메인메뉴] ===========");
 			System.out.println("[1.길드관리] [2.상점] [3.인벤토리]");
-			System.out.println("[4.저장] [5.로드] [0.종료]");
+			System.out.println("[4.저장] [5.로드] [6.던전입장]");
+			System.out.println("[0.종료] ");
 			int sel = scan.nextInt();
 			if (sel == 1) {
 				player.guildMenu();
@@ -35,8 +36,10 @@ class MainGame {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+			} else if(sel == 6) {
+				player.enterDungeon();
 			} else {
-				System.out.println("게임을 종료 합니다.");
+				System.out.println("게임을 종료합니다.");
 				break;
 			}
 		}
